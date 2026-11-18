@@ -19,3 +19,9 @@ The existing architecture is static HTML/CSS/vanilla JavaScript under `site/` wi
 Never copy instructor documents, unreleased homework solutions, private Drive PDFs, student identifiers, credentials, or non-licensed textbook artwork into a public repo. Even officially released solutions need confirmed redistribution permission. Attribute verified materials and draw original diagrams.
 
 Review live repo and issue state before edits; make small PRs, run applicable tests and browser previews, then verify GitHub Pages separately. End with sources opened, exact changed files, test commands actually run, commit/PR, deployment result, blockers and next step. Cross-course changes are coordinated through the main-site chat, not silently applied.
+
+## New-repository smoke test (tracked in #3)
+
+Before saying the starter is ready to use, inspect `.github/workflows/deploy.yml` and verify its `github.repository` guard keeps the starter from deploying. The repository's **Template repository** checkbox is a GitHub setting, not a property that can be inferred from README or workflow code. If that setting cannot be viewed, report it unverified.
+
+For a newly instantiated course repo, check that no `COURSE-XXX` or generic course-title placeholder remains, the home link returns to the portal, the route works at `/COURSE-CODE/`, dark-first/light-persisted theme and keyboard focus function, and all referenced assets resolve. Confirm GitHub Pages setting, Actions run and public URL **in the new repo**; never claim deployment based solely on the template's source tree. Add independent mathematical tests only when an actual engine exists.
