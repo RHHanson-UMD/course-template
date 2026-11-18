@@ -19,3 +19,9 @@ The bundled Pages workflow intentionally **skips deployment in this starter repo
 Keep each course independently deployable and avoid dependencies on other
 course repositories. Reusable mathematical logic can graduate to the versioned
 `learning-core` library. Never check unreleased solutions into a public repo.
+
+## Optional original practice pattern
+
+The starter includes `site/practice.html`, linked from the homepage. It is an **independent example**, not course material: an eight-outcome probability question with a decimal answer, hint, instructive correct/incorrect/invalid feedback, and reset. `site/assets/practice-logic.mjs` contains the pure checker; `site/assets/practice.js` handles accessible DOM interaction. It is optional: new courses can adapt or delete the example without changing other courses.
+
+Run `npm test` (Node 20+) for independent correctness, incorrectness, invalid input, and tolerance-boundary checks. Preview with `python -m http.server 8000 -d site`, then visit `/practice.html` to manually check keyboard, theme persistence, hint, answer and reset. CI is not a substitute for a browser or a live Pages check. No source-specific syllabus or instructor material is included.
