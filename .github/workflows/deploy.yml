@@ -12,6 +12,8 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
+    # Do not deploy the starter itself. In a new course repo this condition is true.
+    if: github.repository != 'RHHanson-UMD/course-template'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
